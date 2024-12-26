@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            max-height: 100vh;
+            background-color: #313131;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        form {
+            background-color: white;
+            padding: 50px;
+            border-radius: 5px;
+            /* width: 250px; */
+        }
+
+        input[type=text] {
+            border: 2px solid black;
+        }
+
+        input[type=submit] {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-color: black;
+        }
+
+        .activities {
+            background-color: #fff;
+            width: 350px;
+            margin-top: 10px;
+            color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">To Do List</h1>
+    <form action="">
+        <input type="text" placeholder="e.g. Buying groceries">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="activities">
+    </div>
+</body>
+<script>
+    let addBtn = document.querySelector('input[type=submit]');
+    let input = document.querySelector('input[type=text]');
+    let activity = document.getElementById('activities')
+
+    addBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        let p = document.createElement('p');
+        p.innerHTML = `${input.value}`
+        //activity.appendChild(p); //This will create a top-bottom approach
+
+        activity.insertBefore(p, activity.firstChild) //This will be opposite of what we are intending to do
+
+    })
+</script>
+
+</html>
