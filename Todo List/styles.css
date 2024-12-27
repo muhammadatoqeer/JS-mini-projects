@@ -57,6 +57,22 @@ span::selection{
 
 }
 
+span {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+span::before {
+    content: "\f0c8"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    font-size: 20px; 
+    color: black; 
+    margin-right: 8px;
+}
+
+
 i {
     padding:9px;
     background:black;
