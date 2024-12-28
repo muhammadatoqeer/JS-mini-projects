@@ -1,26 +1,67 @@
 let product = document.querySelectorAll('.product');
+let men = document.querySelector('#men');
+let all = document.querySelector('#all');
+let children = document.querySelector('#children')
+let senior = document.querySelector('#senior')
+let women = document.querySelector('#women')
+let array = Array.from(product);
 
+console.log(array);
 
-// for (let i = 0; i < product.length; i++) {
-//     let classList = product[i].classList;
-//     for (let j = 0; j < classList.length; j++) {
-//         console.log(product[i].classList === 'men')
-//     }
-// }
+men.addEventListener('click', function () {
+    for (let index = 0; index < product.length; index++) {
+        if (product[index].getAttribute('class').includes('men')) {
+            console.log(true);
+        } else {
+            product[index].classList.add('hide')
+        }
+    } //Node List is iterable
 
-let array = Array.from(product[0].classList);
-// console.log(array)
-// console.log(array.includes('men'));
-
-let arrayTwo = [1, 2, 3, 4, 6];
-
-arrayTwo.forEach((value, index, array) => {
-    array[index] = value * 2;
 })
 
-console.log(arrayTwo);
-console.log(arrayTwo);
+all.addEventListener('click', function () {
+    for (let index = 0; index < product.length; index++) {
+        if (product[index].getAttribute('class').includes('product')) {
+            console.log(true);
+        } else {
+            product[index].classList.add('hide')
+        }
+    } //Node List is iterable
 
+})
+
+women.addEventListener('click', function () {
+    for (let index = 0; index < product.length; index++) {
+        if (product[index].getAttribute('class').includes('women')) {
+            console.log(true);
+        } else {
+            product[index].classList.add('hide')
+        }
+    } //Node List is iterable
+
+})
+
+children.addEventListener('click', function () {
+    for (let index = 0; index < product.length; index++) {
+        if (product[index].getAttribute('class').includes('children')) {
+            console.log(true);
+        } else {
+            product[index].classList.add('hide')
+        }
+    } //Node List is iterable
+
+})
+
+senior.addEventListener('click', function () {
+    for (let index = 0; index < product.length; index++) {
+        if (product[index].getAttribute('class').includes('senior')) {
+            console.log(true);
+        } else {
+            product[index].classList.add('hide')
+        }
+    } //Node List is iterable
+
+})
 
 
 
