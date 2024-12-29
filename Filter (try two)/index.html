@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Filter 2</title>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        button {
+            color: white;
+            background-color: transparent;
+            padding: 20px;
+            border: solid 2px white;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .elements {
+            margin: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px
+        }
+
+        span {
+            font-size: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello!</h1>
+        <div class="buttons">
+            <button>All</button>
+            <button>Task 1</button>
+            <button>Task 2</button>
+            <button>Task 3</button>
+
+        </div>
+        <div class="elements">
+            <span data-filter="2">Task 2</span>
+            <span data-filter="1">Task 1 </span>
+            <span data-filter="2">Task 2</span>
+            <span data-filter="3">Task 3</span>
+            <span data-filter="1">Task 1</span>
+            <span data-filter="2">Task 2</span>
+            <span data-filter="3">Task 3</span>
+            <span data-filter="1">Task 1</span>
+        </div>
+
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('button')
+    // console.log(buttons)
+
+    const span = document.querySelectorAll('.elements span');
+
+    buttons.forEach(element => {
+        element.addEventListener('click', function (e) {
+            if (element.innerHTML === 'All') {
+                span.forEach(element => element.classList.add("show"))
+            } else if (element.innerHTML === 'Task 1') {
+                span.forEach(element => {
+                    if (element.getAttribute('data-filter') !== 1) {
+                        element.classList.add('hide')
+                    }
+                })
+            } else if (element.innerHTML === 'Task 2') {
+                span.forEach(element => {
+                    if (element.getAttribute('data-filter') !== 2) {
+                        element.classList.add('hide')
+                    }
+                })
+            } else if (element.innerHTML === 'Task 3') {
+                span.forEach(element => {
+                    if (element.getAttribute('data-filter') !== 3) {
+                        element.classList.add('hide')
+                    }
+                })
+            }
+        })
+    })
+</script>
+
+</html>
