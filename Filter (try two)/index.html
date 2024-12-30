@@ -32,7 +32,7 @@
             cursor: pointer;
         }
 
-        .elements {
+        #elements {
             margin: 50px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -43,6 +43,7 @@
             font-size: 25px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-weight: 600;
+
         }
 
         .hide {
@@ -59,26 +60,27 @@
     <div class="container">
         <h1>Hello!</h1>
         <div class="buttons">
-            <button id="1">All</button>
+            <button id="1" onclick="(filterElements('all'))">All</button>
             <button id="2">Task 1</button>
             <button id="3">Task 2</button>
             <button id="4">Task 3</button>
 
         </div>
         <div id="elements">
-            <span data-filter="Task 2">Task 2</span>
-            <span data-filter="Task 1">Task 1 </span>
-            <span data-filter="Task 2">Task 2</span>
-            <span data-filter="Task 3">Task 3</span>
-            <span data-filter="Task 1">Task 1</span>
-            <span data-filter="Task 2">Task 2</span>
-            <span data-filter="Task 3">Task 3</span>
-            <span data-filter="Task 1">Task 1</span>
+            <span class="element" data-filter="Task 2">Task 2</span>
+            <span class="element" data-filter="Task 1">Task 1 </span>
+            <span class="element" data-filter="Task 2">Task 2</span>
+            <span class="element" data-filter="Task 3">Task 3</span>
+            <span class="element" data-filter="Task 1">Task 1</span>
+            <span class="element" data-filter="Task 2">Task 2</span>
+            <span class="element" data-filter="Task 3">Task 3</span>
+            <span class="element" data-filter="Task 1">Task 1</span>
         </div>
 
     </div>
 </body>
 <script>
+        let elements = document.querySelecto
 </script>
 
 </html>
