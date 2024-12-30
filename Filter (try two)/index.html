@@ -59,56 +59,26 @@
     <div class="container">
         <h1>Hello!</h1>
         <div class="buttons">
-            <button>All</button>
-            <button>Task 1</button>
-            <button>Task 2</button>
-            <button>Task 3</button>
+            <button id="1">All</button>
+            <button id="2">Task 1</button>
+            <button id="3">Task 2</button>
+            <button id="4">Task 3</button>
 
         </div>
-        <div class="elements">
-            <span data-filter="2">Task 2</span>
-            <span data-filter="1">Task 1 </span>
-            <span data-filter="2">Task 2</span>
-            <span data-filter="3">Task 3</span>
-            <span data-filter="1">Task 1</span>
-            <span data-filter="2">Task 2</span>
-            <span data-filter="3">Task 3</span>
-            <span data-filter="1">Task 1</span>
+        <div id="elements">
+            <span data-filter="Task 2">Task 2</span>
+            <span data-filter="Task 1">Task 1 </span>
+            <span data-filter="Task 2">Task 2</span>
+            <span data-filter="Task 3">Task 3</span>
+            <span data-filter="Task 1">Task 1</span>
+            <span data-filter="Task 2">Task 2</span>
+            <span data-filter="Task 3">Task 3</span>
+            <span data-filter="Task 1">Task 1</span>
         </div>
 
     </div>
 </body>
 <script>
-    const buttons = document.querySelectorAll('button')
-    // console.log(buttons)
-
-    const span = document.querySelectorAll('.elements span');
-
-    buttons.forEach(element => {
-        element.addEventListener('click', function (e) {
-            if (element.innerHTML === 'All') {
-                span.forEach(element => element.classList.add("show"))
-            } else if (element.innerHTML === 'Task 1') {
-                span.forEach(element => {
-                    if (element.getAttribute('data-filter') !== 1) {
-                        element.classList.add('hide')
-                    }
-                })
-            } else if (element.innerHTML === 'Task 2') {
-                span.forEach(element => {
-                    if (element.getAttribute('data-filter') !== 2) {
-                        element.classList.add('hide')
-                    }
-                })
-            } else if (element.innerHTML === 'Task 3') {
-                span.forEach(element => {
-                    if (element.getAttribute('data-filter') !== 3) {
-                        element.classList.add('hide')
-                    }
-                })
-            }
-        })
-    })
 </script>
 
 </html>
