@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <style>
+        body {
+            background-color: #222;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1rem;
+            background-color: #222;
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: #222;
+            transition: 0.3s;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Testing with HTML and JS</h1>
+
+    <button class="button">This is another Button</button>
+    <button class="button">This is another Button</button>
+    <button class="button">This is another Button</button>
+    <button class="button">This is another Button</button>
+    <button class="button">This is another Button</button>
+
+    <span class="text">Text 1</span>
+    <span class="text"></span>
+    <span class="text"></span>
+    <span class="text"></span>
+    <span class="text"></span>
+
+</body>
+
+<script>
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(element => {
+        element.onclick = function (e) {
+            if (element.innerHTML.includes('This')) {
+                element.classList.add('hide');
+            }
+        }
+
+    });
+
+
+
+</script>
+
+</html>

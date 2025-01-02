@@ -26,11 +26,11 @@ button {
 }
 
 button:hover {
-    background-color: #ffffff18;
+    background-color: #ffffff;
     transition: 0.2s;
+    color: #111;
 
 }
-
 
 input {
     height: 30px;

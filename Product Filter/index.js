@@ -1,81 +1,39 @@
-let product = document.querySelectorAll('.product');
-let men = document.querySelector('#Men');
-let all = document.querySelector('#All');
-let children = document.querySelector('#Child')
-let senior = document.querySelector('#senior');
-let women = document.querySelector('#Women');
-let array = Array.from(product);
+const buttons = document.querySelectorAll('button');
+const singleProduct = document.querySelectorAll('.product');
+let attribute = null;
+let dataAttribute = [];
+const searchBtn = document.getElementById('search');
+const searchBox = document.getElementById('searchBox');
+const titles = document.querySelectorAll('.title')
 
-console.log(array);
+singleProduct.forEach(element => {
+    attribute = element.getAttribute('data-filter');
+    dataAttribute.push(attribute);
+});
 
-all.addEventListener('click', function (e) {
-    e.preventDefault();
-    for (let index = 0; index < product.length; index++) {
-        if (product[index].getAttribute('class').includes('product')) {
-            console.log(true);
-        } else {
-            product[index].classList.add('hide')
+buttons.forEach(element => {
+    element.onclick = function (e) {
+        for (let i = 0; i < dataAttribute.length; i++) {
+            if (dataAttribute[i].includes(element.innerHTML)) {
+                singleProduct[i].classList.remove('hide')
+            } else {
+                singleProduct[i].classList.add('hide')
+            }
         }
-    } //Node List is iterable
-    e.stopPropagation();
+    }
+});
 
-})
+console.log(titles)
 
-men.addEventListener('click', function (e) {
-    e.preventDefault();
-    for (let index = 0; index < product.length; index++) {
-        if (product[index].getAttribute('class').includes('men')) {
-            console.log(true);
+searchBtn.onclick = function (e) {
+    for (let i = 0; i < titles.length; i++) {
+        if (titles[i].innerHTML.includes(searchBtn.value)) {
+            titles[i].classList.remove('hide');
+            searchBox.value = '';
         } else {
-            product[index].classList.add('hide')
+            titles[i].classList.add('hide');
+            searchBox.value = '';
         }
-    } //Node List is iterable
-    e.stopPropagation();
-})
 
-women.addEventListener('click', function (e) {
-    e.preventDefault();
-    for (let index = 0; index < product.length; index++) {
-        if (product[index].getAttribute('class').includes('women')) {
-            console.log(true);
-        } else {
-            product[index].classList.add('hide')
-        }
-    } //Node List is iterable
-    e.stopPropagation();
-
-})
-
-children.addEventListener('click', function (e) {
-    e.preventDefault();
-    for (let index = 0; index < product.length; index++) {
-        if (product[index].getAttribute('class').includes('children')) {
-            console.log(true);
-        } else {
-            product[index].classList.add('hide')
-        }
-    } //Node List is iterable
-    e.stopPropagation();
-
-})
-
-senior.addEventListener('click', function (e) {
-    e.preventDefault();
-    for (let index = 0; index < product.length; index++) {
-        if (product[index].getAttribute('class').includes('senior')) {
-            console.log(true);
-        } else {
-            product[index].classList.add('hide')
-        }
-    } //Node List is iterable
-    e.stopPropagation();
-
-})
-
-// const buttons = document.querySelectorAll('button');
-// const products = document.querySelectorAll('.product')
-
-// console.log(buttons);
-// console.log(products);
-
-
+    }
+}
