@@ -4,7 +4,8 @@ let attribute = null;
 let dataAttribute = [];
 const searchBtn = document.getElementById('search');
 const searchBox = document.getElementById('searchBox');
-const titles = document.querySelectorAll('.title')
+const titles = (singleProduct)
+const searchResults = document.getElementById('searchResults')
 
 singleProduct.forEach(element => {
     attribute = element.getAttribute('data-filter');
@@ -22,18 +23,3 @@ buttons.forEach(element => {
         }
     }
 });
-
-console.log(titles)
-
-searchBtn.onclick = function (e) {
-    for (let i = 0; i < titles.length; i++) {
-        if (titles[i].innerHTML.includes(searchBtn.value)) {
-            titles[i].classList.remove('hide');
-            searchBox.value = '';
-        } else {
-            titles[i].classList.add('hide');
-            searchBox.value = '';
-        }
-
-    }
-}

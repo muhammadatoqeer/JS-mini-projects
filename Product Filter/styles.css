@@ -13,6 +13,7 @@ body {
     color: white;
     gap: 10%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 200px 0;
 }
 
 button {
