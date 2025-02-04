@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
+        body, div {
             background-color: #222;
             display: flex;
             flex-direction: column;
@@ -19,35 +19,55 @@
             color: white;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 2rem;
-        }
-
-        button {
-            padding: 20px;
-            font-size: 1rem;
-            background-color: #222;
-            color: white;
-            border: 2px solid white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #fff;
-            color: #222;
-            transition: 0.3s;
+            text-align: center;
         }
 
         .hide {
             display: none;
         }
+        .container{
+            width: 1280px;
+        }
+
+        .title{
+            border: 2px solid white;
+            width: 100%;
+            height: 60px;
+            cursor:pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding:0 20px;
+
+        }
+
     </style>
 </head>
 
 <body>
-<!-- <i class="fa-solid fa-home "></i> -->
+    <h1>Accordion</h1>
+    <div class="container">
+        <div class="item">
+            <div class="title">
+                <p>Question 1</p>
+                <i class="fa-solid fa-arrow-up"></i>
+            </div>
+            <p class="answer">And this is the answer for the question that you are asking mate</p>
+        </div>
+    </div>
 </body>
 
 <script>
+            let title = document.querySelector('.title')
+            let answer = document.querySelector('.answer')
+            let arr = Array.from(answer.classList)
 
+            title.addEventListener('click', (e) => {
+                if (arr.includes('answer')) {
+                    answer.classList.add('hide')
+                }
+            })
+            answer.classList.remove('hide')
 
 </script>
 

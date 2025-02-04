@@ -30,24 +30,27 @@ const accordionWrapper = document.querySelector('.accordion');
 function createAccordionData() {
     accordionWrapper.innerHTML = data.map(dataItem => `
         <div class = "accordion_item">
-        <div class = "accordion_title">
-        <h3>${dataItem.question}</h3>
-        <i class = "fa-solid fa-arrow-up"></i>
-        <div class= "accordion_content">
-        <p>${dataItem.answer}
-        </div>
-        </div>
+            <div class = "accordion_title">
+                <h3>${dataItem.question}</h3>
+                <i class = "fa-solid fa-arrow-up"></i>
+                <div class= "accordion_content">
+                    <p>${dataItem.answer}</p>
+                </div>
+            </div>
         </div>
         `).join(" ")
 }
 
+
+
 createAccordionData();
+
 
 const getAccordionTitle = document.querySelectorAll('.accordion_title');
 
 getAccordionTitle.forEach(element => {
     element.addEventListener('click', (e) => {
-        if (element.classList.contains('active')) {
+        if (element.classList.contains('active')) { //contains method is the new one to return true/false
             element.classList.remove('active')
         } else {
             let alreadyActive = document.querySelectorAll('.active');
