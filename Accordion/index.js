@@ -56,6 +56,9 @@ getAccordionTitles.forEach((currentItem) => {
         if (currentItem.classList.contains("active")) {
             currentItem.classList.remove("active");
         } else {
+
+            //Ensuring only one accordion is open at a time
+
             let getAlreadyAddedActiveClasses = document.querySelectorAll(".active");
 
             getAlreadyAddedActiveClasses.forEach((currentActiveItem) => {
@@ -66,3 +69,15 @@ getAccordionTitles.forEach((currentItem) => {
         }
     });
 });
+
+/*
+
+********************************************************Algorithm********************************************
+
+- Get the titles NodeList (from querySelectorAll)
+- Upon clicking on the title, If the current title has active class in the list then remove that 'active' class from it. If it does not have the 'active' class then add 'active' class to it only after you've removed the 'active' class from other titles. 
+- This ensures that only one is available at a time.
+
+
+*/
+
