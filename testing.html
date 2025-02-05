@@ -31,7 +31,7 @@
 
         .title{
             border: 2px solid white;
-            width: 100%;
+            width: inherit;
             height: 60px;
             cursor:pointer;
             display: flex;
@@ -45,29 +45,30 @@
 </head>
 
 <body>
-    <h1>Accordion</h1>
-    <div class="container">
-        <div class="item">
-            <div class="title">
-                <p>Question 1</p>
-                <i class="fa-solid fa-arrow-up"></i>
+    <section class="section">
+        <div class="container">
+            <h1>Accordion</h1>
+            <div class="accordion"></div>
             </div>
-            <p class="answer">And this is the answer for the question that you are asking mate</p>
-        </div>
-    </div>
+    </section>
 </body>
 
 <script>
-            let title = document.querySelector('.title')
-            let answer = document.querySelector('.answer')
-            let arr = Array.from(answer.classList)
+                let title = document.querySelector('.title');
+                let answer = document.querySelector('.answer');
+                let icon = document.querySelector('i')
 
             title.addEventListener('click', (e) => {
-                if (arr.includes('answer')) {
-                    answer.classList.add('hide')
+                if (answer.classList.contains('hide')) {
+                    answer.classList.remove('hide');
+                    icon.setAttribute('class', 'fa-solid fa-arrow-down')
+
+                } else {
+                    answer.classList.add('hide');
+                    icon.setAttribute('class', 'fa-solid fa-arrow-up')
                 }
             })
-            answer.classList.remove('hide')
+
 
 </script>
 

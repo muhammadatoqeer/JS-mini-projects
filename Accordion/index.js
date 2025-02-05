@@ -25,39 +25,44 @@ const data = [
     },
 ];
 
-const accordionWrapper = document.querySelector('.accordion');
+const accordionWrapper = document.querySelector(".accordion");
 
 function createAccordionData() {
-    accordionWrapper.innerHTML = data.map(dataItem => `
-        <div class = "accordion_item">
-            <div class = "accordion_title">
-                <h3>${dataItem.question}</h3>
-                <i class = "fa-solid fa-arrow-up"></i>
-                <div class= "accordion_content">
-                    <p>${dataItem.answer}</p>
-                </div>
-            </div>
-        </div>
-        `).join(" ")
+    accordionWrapper.innerHTML = data
+        .map(
+            (dataItem) => `
+      <div class="accordion_item">
+      <div class="accordion_title">
+      <h3>${dataItem.question}</h3>
+      <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <div class="accordion_content">
+      <p>${dataItem.answer}</p>
+      </div>
+      </div>
+      `
+        )
+        .join(" ");
 }
-
-
 
 createAccordionData();
 
+const getAccordionTitles = document.querySelectorAll(".accordion_title");
 
-const getAccordionTitle = document.querySelectorAll('.accordion_title');
 
-getAccordionTitle.forEach(element => {
-    element.addEventListener('click', (e) => {
-        if (element.classList.contains('active')) { //contains method is the new one to return true/false
-            element.classList.remove('active')
+
+getAccordionTitles.forEach((currentItem) => {
+    currentItem.addEventListener("click", (event) => {
+        if (currentItem.classList.contains("active")) {
+            currentItem.classList.remove("active");
         } else {
-            let alreadyActive = document.querySelectorAll('.active');
-            alreadyActive.forEach(item => {
-                item.classList.remove('active')
-            })
-            element.classList.add('active')
+            let getAlreadyAddedActiveClasses = document.querySelectorAll(".active");
+
+            getAlreadyAddedActiveClasses.forEach((currentActiveItem) => {
+                currentActiveItem.classList.remove("active");
+            });
+
+            currentItem.classList.add("active");
         }
-    })
-})
+    });
+});
